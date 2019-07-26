@@ -148,6 +148,10 @@ func write(data []Target) error {
 		return errors.Wrap(err, "could not  write to temp file")
 	}
 	defer log.Println("written", *outputFile)
+
+	// fix permissions
+	os.Chmod(tmpfile.Name(), 0644)
+
 	return os.Rename(tmpfile.Name(), *outputFile)
 }
 
