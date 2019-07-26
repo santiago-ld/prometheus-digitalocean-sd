@@ -12,7 +12,7 @@ docker run \
   -v "$PWD":/tmp \
   -e DO_TOKEN="digitalocean-read-only-token" \
   --restart=always \
-  totvslabs/prometheus-digitalocean-sd --output.file=/tmp/do_sd.json
+  santiagold/prometheus-digitalocean-sd --output.file=/tmp/do_sd.json
 ```
 
 And then change your `prometheus.yml` config file to use `file_sd_configs`
